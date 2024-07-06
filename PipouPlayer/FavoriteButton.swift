@@ -9,23 +9,28 @@ import SwiftUI
 
 struct FavoriteButton: View {
     @Binding var isSet: Bool
-    
+    var size: CGFloat // Taille du bouton
+
     var body: some View {
-        Button{
+        Button(action: {
             isSet.toggle()
-        } label: {
-            Label("Toggle favorite", systemImage: isSet ? "heart.fill" : "heart")
-                .labelStyle(.iconOnly)
-                .padding(7)
-                .background(Circle()
-                    .fill(Color(.white))
+        }) {
+            ZStack {
+                Circle()
+                    .fill(Color.white)
                     .shadow(color: Color.gray.opacity(0.3), radius: 5)
-                )
-                .foregroundStyle(isSet ? .pink : .gray)
+                
+                Image(systemName: isSet ? "heart.fill" : "heart")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(isSet ? .pink : .gray)
+                    .padding(size * 0.25) // Taille de l'icône relative à la taille du bouton
+            }
+            .frame(width: size, height: size) // Taille globale du bouton
         }
     }
 }
 
 #Preview {
-    FavoriteButton(isSet: .constant(true))
+    FavoriteButton(isSet: .constant(true), size: 64)
 }

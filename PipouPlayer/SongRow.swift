@@ -23,7 +23,7 @@ struct SongRow: View {
             
             Spacer()
             
-            FavoriteButton(isSet: $isFavorite)
+            FavoriteButton(isSet: $isFavorite, size:32)
         }
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 15))

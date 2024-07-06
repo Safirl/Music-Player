@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FE81D2292C373FB200672131 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81D2282C373FB200672131 /* FavoriteButton.swift */; };
 		FE81D22B2C37F28200672131 /* SongRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81D22A2C37F28200672131 /* SongRow.swift */; };
+		FED693BF2C38186100DE38CF /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693BE2C38186100DE38CF /* SongList.swift */; };
+		FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C02C3819B000DE38CF /* PlayerView.swift */; };
+		FED693C32C385D2F00DE38CF /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C22C385D2F00DE38CF /* MusicController.swift */; };
+		FED693C52C38601000DE38CF /* MusicSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C42C38601000DE38CF /* MusicSlider.swift */; };
 		FEF468522B2F683500588855 /* PipouPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF468512B2F683500588855 /* PipouPlayerApp.swift */; };
 		FEF468542B2F683500588855 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF468532B2F683500588855 /* ContentView.swift */; };
 		FEF468562B2F683600588855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF468552B2F683600588855 /* Assets.xcassets */; };
@@ -18,6 +22,10 @@
 /* Begin PBXFileReference section */
 		FE81D2282C373FB200672131 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		FE81D22A2C37F28200672131 /* SongRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRow.swift; sourceTree = "<group>"; };
+		FED693BE2C38186100DE38CF /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
+		FED693C02C3819B000DE38CF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		FED693C22C385D2F00DE38CF /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		FED693C42C38601000DE38CF /* MusicSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSlider.swift; sourceTree = "<group>"; };
 		FEF4684E2B2F683500588855 /* PipouPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipouPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF468512B2F683500588855 /* PipouPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipouPlayerApp.swift; sourceTree = "<group>"; };
 		FEF468532B2F683500588855 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +67,10 @@
 				FEF468532B2F683500588855 /* ContentView.swift */,
 				FE81D2282C373FB200672131 /* FavoriteButton.swift */,
 				FE81D22A2C37F28200672131 /* SongRow.swift */,
+				FED693BE2C38186100DE38CF /* SongList.swift */,
+				FED693C02C3819B000DE38CF /* PlayerView.swift */,
+				FED693C42C38601000DE38CF /* MusicSlider.swift */,
+				FED693C22C385D2F00DE38CF /* MusicController.swift */,
 				FEF468552B2F683600588855 /* Assets.xcassets */,
 				FEF468572B2F683600588855 /* Preview Content */,
 			);
@@ -143,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED693BF2C38186100DE38CF /* SongList.swift in Sources */,
 				FE81D2292C373FB200672131 /* FavoriteButton.swift in Sources */,
+				FED693C52C38601000DE38CF /* MusicSlider.swift in Sources */,
 				FEF468542B2F683500588855 /* ContentView.swift in Sources */,
+				FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */,
+				FED693C32C385D2F00DE38CF /* MusicController.swift in Sources */,
 				FEF468522B2F683500588855 /* PipouPlayerApp.swift in Sources */,
 				FE81D22B2C37F28200672131 /* SongRow.swift in Sources */,
 			);
