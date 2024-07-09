@@ -52,7 +52,8 @@ struct PlayerView: View {
                             VStack {
                                 Spacer()
                                 FavoriteButton(isSet: $isFavorite, size:42)
-                                    .padding([.bottom, .trailing], 26)
+                                    .padding(.bottom, 26)
+                                    .padding(.trailing, 16)
                             }
                         }
                         .padding(.horizontal, 10.0)
