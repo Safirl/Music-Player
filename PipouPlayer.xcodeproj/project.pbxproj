@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		FE81D2292C373FB200672131 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81D2282C373FB200672131 /* FavoriteButton.swift */; };
 		FE81D22B2C37F28200672131 /* SongRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81D22A2C37F28200672131 /* SongRow.swift */; };
+		FE891A5C2C3AC3BD00AF6439 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A5B2C3AC3BD00AF6439 /* ModelData.swift */; };
+		FE891A5E2C3AC3DE00AF6439 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A5D2C3AC3DE00AF6439 /* Song.swift */; };
+		FE891A7F2C3AC50A00AF6439 /* songData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE891A7E2C3AC50A00AF6439 /* songData.json */; };
+		FE891A812C3DBB8900AF6439 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A802C3DBB8900AF6439 /* CornerRadius.swift */; };
+		FE891A832C3DBD7E00AF6439 /* SmallPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */; };
+		FE891A852C3DCC9F00AF6439 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A842C3DCC9F00AF6439 /* MusicController.swift */; };
 		FED693BF2C38186100DE38CF /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693BE2C38186100DE38CF /* SongList.swift */; };
 		FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C02C3819B000DE38CF /* PlayerView.swift */; };
-		FED693C32C385D2F00DE38CF /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C22C385D2F00DE38CF /* MusicController.swift */; };
+		FED693C32C385D2F00DE38CF /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C22C385D2F00DE38CF /* MusicPlayer.swift */; };
 		FED693C52C38601000DE38CF /* MusicSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C42C38601000DE38CF /* MusicSlider.swift */; };
 		FEF468522B2F683500588855 /* PipouPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF468512B2F683500588855 /* PipouPlayerApp.swift */; };
 		FEF468542B2F683500588855 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF468532B2F683500588855 /* ContentView.swift */; };
@@ -22,9 +28,15 @@
 /* Begin PBXFileReference section */
 		FE81D2282C373FB200672131 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		FE81D22A2C37F28200672131 /* SongRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRow.swift; sourceTree = "<group>"; };
+		FE891A5B2C3AC3BD00AF6439 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		FE891A5D2C3AC3DE00AF6439 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		FE891A7E2C3AC50A00AF6439 /* songData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songData.json; sourceTree = SOURCE_ROOT; };
+		FE891A802C3DBB8900AF6439 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlayerView.swift; sourceTree = "<group>"; };
+		FE891A842C3DCC9F00AF6439 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		FED693BE2C38186100DE38CF /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		FED693C02C3819B000DE38CF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		FED693C22C385D2F00DE38CF /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		FED693C22C385D2F00DE38CF /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		FED693C42C38601000DE38CF /* MusicSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSlider.swift; sourceTree = "<group>"; };
 		FEF4684E2B2F683500588855 /* PipouPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipouPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF468512B2F683500588855 /* PipouPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipouPlayerApp.swift; sourceTree = "<group>"; };
@@ -44,6 +56,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE891A592C3AC2FD00AF6439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE81D22A2C37F28200672131 /* SongRow.swift */,
+				FEF468532B2F683500588855 /* ContentView.swift */,
+				FED693BE2C38186100DE38CF /* SongList.swift */,
+				FED693C02C3819B000DE38CF /* PlayerView.swift */,
+				FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */,
+				FE891A842C3DCC9F00AF6439 /* MusicController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE891A5A2C3AC31300AF6439 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FED693C42C38601000DE38CF /* MusicSlider.swift */,
+				FED693C22C385D2F00DE38CF /* MusicPlayer.swift */,
+				FE81D2282C373FB200672131 /* FavoriteButton.swift */,
+				FE891A802C3DBB8900AF6439 /* CornerRadius.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FE891A7D2C3AC49D00AF6439 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE891A5B2C3AC3BD00AF6439 /* ModelData.swift */,
+				FE891A5D2C3AC3DE00AF6439 /* Song.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FEF468452B2F683500588855 = {
 			isa = PBXGroup;
 			children = (
@@ -63,14 +108,10 @@
 		FEF468502B2F683500588855 /* PipouPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				FE891A7D2C3AC49D00AF6439 /* Model */,
 				FEF468512B2F683500588855 /* PipouPlayerApp.swift */,
-				FEF468532B2F683500588855 /* ContentView.swift */,
-				FE81D2282C373FB200672131 /* FavoriteButton.swift */,
-				FE81D22A2C37F28200672131 /* SongRow.swift */,
-				FED693BE2C38186100DE38CF /* SongList.swift */,
-				FED693C02C3819B000DE38CF /* PlayerView.swift */,
-				FED693C42C38601000DE38CF /* MusicSlider.swift */,
-				FED693C22C385D2F00DE38CF /* MusicController.swift */,
+				FE891A5A2C3AC31300AF6439 /* Helper */,
+				FE891A592C3AC2FD00AF6439 /* Views */,
 				FEF468552B2F683600588855 /* Assets.xcassets */,
 				FEF468572B2F683600588855 /* Preview Content */,
 			);
@@ -80,6 +121,7 @@
 		FEF468572B2F683600588855 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				FE891A7E2C3AC50A00AF6439 /* songData.json */,
 				FEF468582B2F683600588855 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -145,6 +187,7 @@
 			files = (
 				FEF468592B2F683600588855 /* Preview Assets.xcassets in Resources */,
 				FEF468562B2F683600588855 /* Assets.xcassets in Resources */,
+				FE891A7F2C3AC50A00AF6439 /* songData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,10 +200,15 @@
 			files = (
 				FED693BF2C38186100DE38CF /* SongList.swift in Sources */,
 				FE81D2292C373FB200672131 /* FavoriteButton.swift in Sources */,
+				FE891A5C2C3AC3BD00AF6439 /* ModelData.swift in Sources */,
 				FED693C52C38601000DE38CF /* MusicSlider.swift in Sources */,
+				FE891A5E2C3AC3DE00AF6439 /* Song.swift in Sources */,
 				FEF468542B2F683500588855 /* ContentView.swift in Sources */,
+				FE891A812C3DBB8900AF6439 /* CornerRadius.swift in Sources */,
 				FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */,
-				FED693C32C385D2F00DE38CF /* MusicController.swift in Sources */,
+				FED693C32C385D2F00DE38CF /* MusicPlayer.swift in Sources */,
+				FE891A852C3DCC9F00AF6439 /* MusicController.swift in Sources */,
+				FE891A832C3DBD7E00AF6439 /* SmallPlayerView.swift in Sources */,
 				FEF468522B2F683500588855 /* PipouPlayerApp.swift in Sources */,
 				FE81D22B2C37F28200672131 /* SongRow.swift in Sources */,
 			);

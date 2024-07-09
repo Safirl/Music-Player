@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 class ModelData {
-    var songs: [Song] = load("landmarkData.json")
+    var songs: [Song] = load("songData.json")
 }
 
 
@@ -31,6 +31,4 @@ func load<T: Decodable>(_ filename: String) -> T {
         } catch {
             fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
         }
-    
-    
 }

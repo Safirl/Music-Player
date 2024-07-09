@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MusicController: View {
+struct MusicPlayer: View {
     var body: some View {
         HStack(spacing: 22){
             Button(action: {
@@ -41,5 +41,5 @@ struct MusicController: View {
 }
 
 #Preview {
-    MusicController()
+    MusicPlayer()
 }

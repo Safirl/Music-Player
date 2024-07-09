@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Drifting Smoke",
+        "imageName": "driftingSmoke",
+        "artistName": "Kalaido - Lo-fi Music",
+        "isFavorite": true,
+        "id": 1
+    },
+    {
+        "title": "Save Me",
+        "imageName": "saveMe",
+        "artistName": "Save Me - Lo-fi Music",
+        "isFavorite": false,
+        "id": 2
+    },
+    {
+        "title": "Save Me",
+        "imageName": "test",
+        "artistName": "Save Me - Lo-fi Music",
+        "isFavorite": false,
+        "id": 3
+    }
+]
