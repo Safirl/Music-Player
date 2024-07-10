@@ -10,6 +10,7 @@ import SwiftUI
 struct SmallPlayerView: View {
     var song: Song
     @State private var showMusicPlayer = false
+    @StateObject var audioManager = AudioManager.shared
     @Environment(\.presentationMode) var presentationMode
     
     var dragToOpenGesture: some Gesture {
@@ -25,7 +26,7 @@ struct SmallPlayerView: View {
         ZStack {
             Rectangle()
                 .fill(Color.white)
-                .frame(width: .infinity, height: 110)
+                .frame(width: UIScreen.screenWidth, height: 110)
                 .cornerRadius(25, corners: [.topLeft, .topRight])
             song.image
                 .resizable()
@@ -35,7 +36,7 @@ struct SmallPlayerView: View {
                 .clipped()
                 .mask(
                     Rectangle()
-                        .frame(width: .infinity, height: 110)
+                        .frame(width: UIScreen.screenWidth, height: 110)
                         .cornerRadius(25, corners: [.topLeft, .topRight])
                 )
             Button(action: {
@@ -61,11 +62,14 @@ struct SmallPlayerView: View {
                 
                 Button(action: {
                     // Action pour le bouton "pause"
-                    print("Pause button tapped")
+                    print(song.fileName)
+                    if(!audioManager.isPlaying){
+                        audioManager.playAudio(fileName: song.fileName)
+                    }else {audioManager.stopAudio()}
                 }) {
-                    Image("pauseIcon")
+                    Image(audioManager.isPlaying ? "pauseIcon" : "playIcon")
                         .resizable()
-                        .frame(width: 38 , height: 38)
+                        .frame(width: 38, height: 38)
                 }
                 
                 Button(action: {
@@ -80,7 +84,7 @@ struct SmallPlayerView: View {
             
         }
         .gesture(dragToOpenGesture)
-        .frame(width: .infinity, height: 110)
+        .frame(width: UIScreen.screenWidth, height: 110)
     }
 }
 

@@ -44,7 +44,7 @@ struct PlayerView: View {
                 .mask(
                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                         .fill(LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black.opacity(0.8)]), startPoint: .bottom, endPoint: .top))
-                        .frame(width: .infinity, height: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 )
             
             VStack{
@@ -90,7 +90,7 @@ struct PlayerView: View {
                     MusicSlider()
                         .frame(width: 326)
                         .padding(.top, 26)
-                    MusicPlayer()
+                    MusicPlayer(song: song)
                         .padding(.top, 18)
                 }
                  // Push content to the top

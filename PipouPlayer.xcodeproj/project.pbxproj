@@ -14,7 +14,8 @@
 		FE891A7F2C3AC50A00AF6439 /* songData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE891A7E2C3AC50A00AF6439 /* songData.json */; };
 		FE891A812C3DBB8900AF6439 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A802C3DBB8900AF6439 /* CornerRadius.swift */; };
 		FE891A832C3DBD7E00AF6439 /* SmallPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */; };
-		FE891A852C3DCC9F00AF6439 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A842C3DCC9F00AF6439 /* MusicController.swift */; };
+		FE891A852C3DCC9F00AF6439 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A842C3DCC9F00AF6439 /* AudioManager.swift */; };
+		FE9B72D02C3F099F006E9111 /* driftingSmokeFile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9B72CF2C3F099F006E9111 /* driftingSmokeFile.mp3 */; };
 		FED693BF2C38186100DE38CF /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693BE2C38186100DE38CF /* SongList.swift */; };
 		FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C02C3819B000DE38CF /* PlayerView.swift */; };
 		FED693C32C385D2F00DE38CF /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C22C385D2F00DE38CF /* MusicPlayer.swift */; };
@@ -33,7 +34,9 @@
 		FE891A7E2C3AC50A00AF6439 /* songData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songData.json; sourceTree = SOURCE_ROOT; };
 		FE891A802C3DBB8900AF6439 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlayerView.swift; sourceTree = "<group>"; };
-		FE891A842C3DCC9F00AF6439 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		FE891A842C3DCC9F00AF6439 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		FE9B72CE2C3F05B8006E9111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FE9B72CF2C3F099F006E9111 /* driftingSmokeFile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = driftingSmokeFile.mp3; sourceTree = "<group>"; };
 		FED693BE2C38186100DE38CF /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		FED693C02C3819B000DE38CF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		FED693C22C385D2F00DE38CF /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 				FED693BE2C38186100DE38CF /* SongList.swift */,
 				FED693C02C3819B000DE38CF /* PlayerView.swift */,
 				FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */,
-				FE891A842C3DCC9F00AF6439 /* MusicController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +91,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FE9B72D12C3F0A3E006E9111 /* MusicFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FE9B72CF2C3F099F006E9111 /* driftingSmokeFile.mp3 */,
+			);
+			path = MusicFiles;
+			sourceTree = "<group>";
+		};
 		FEF468452B2F683500588855 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,8 @@
 		FEF468502B2F683500588855 /* PipouPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				FE9B72CE2C3F05B8006E9111 /* Info.plist */,
+				FE891A842C3DCC9F00AF6439 /* AudioManager.swift */,
 				FE891A7D2C3AC49D00AF6439 /* Model */,
 				FEF468512B2F683500588855 /* PipouPlayerApp.swift */,
 				FE891A5A2C3AC31300AF6439 /* Helper */,
@@ -121,6 +133,7 @@
 		FEF468572B2F683600588855 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				FE9B72D12C3F0A3E006E9111 /* MusicFiles */,
 				FE891A7E2C3AC50A00AF6439 /* songData.json */,
 				FEF468582B2F683600588855 /* Preview Assets.xcassets */,
 			);
@@ -187,6 +200,7 @@
 			files = (
 				FEF468592B2F683600588855 /* Preview Assets.xcassets in Resources */,
 				FEF468562B2F683600588855 /* Assets.xcassets in Resources */,
+				FE9B72D02C3F099F006E9111 /* driftingSmokeFile.mp3 in Resources */,
 				FE891A7F2C3AC50A00AF6439 /* songData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +221,7 @@
 				FE891A812C3DBB8900AF6439 /* CornerRadius.swift in Sources */,
 				FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */,
 				FED693C32C385D2F00DE38CF /* MusicPlayer.swift in Sources */,
-				FE891A852C3DCC9F00AF6439 /* MusicController.swift in Sources */,
+				FE891A852C3DCC9F00AF6439 /* AudioManager.swift in Sources */,
 				FE891A832C3DBD7E00AF6439 /* SmallPlayerView.swift in Sources */,
 				FEF468522B2F683500588855 /* PipouPlayerApp.swift in Sources */,
 				FE81D22B2C37F28200672131 /* SongRow.swift in Sources */,
@@ -347,11 +361,13 @@
 				DEVELOPMENT_TEAM = A8Y934D4ZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PipouPlayer/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,11 +392,13 @@
 				DEVELOPMENT_TEAM = A8Y934D4ZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PipouPlayer/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

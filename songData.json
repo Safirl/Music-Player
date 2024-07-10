@@ -4,6 +4,7 @@
         "imageName": "driftingSmoke",
         "artistName": "Kalaido - Lo-fi Music",
         "isFavorite": true,
+        "fileName": "driftingSmokeFile",
         "id": 1
     },
     {
@@ -11,6 +12,7 @@
         "imageName": "saveMe",
         "artistName": "Save Me - Lo-fi Music",
         "isFavorite": false,
+        "fileName": "driftingSmokeFile",
         "id": 2
     },
     {
@@ -18,6 +20,7 @@
         "imageName": "test",
         "artistName": "Save Me - Lo-fi Music",
         "isFavorite": false,
+        "fileName": "driftingSmokeFile",
         "id": 3
     }
 ]
