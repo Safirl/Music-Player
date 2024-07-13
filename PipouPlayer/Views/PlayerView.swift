@@ -16,13 +16,15 @@ extension UIScreen{
 struct PlayerView: View {
     @State private var isFavorite: Bool = true
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var audioManager = AudioManager.shared
     
-    var song: Song
-    
-    init(song: Song) {
-            self.song = song
-            self._isFavorite = State(initialValue: song.isFavorite)
+    var currentSong: Song {
+            return audioManager.waitingList[audioManager.currentSongIndex]
         }
+    
+//    init(song: Song) {
+//        self._isFavorite = State(initialValue: song.isFavorite)
+//    }
     
     var dragToDismissGesture: some Gesture {
         DragGesture()
@@ -36,7 +38,7 @@ struct PlayerView: View {
     var body: some View {
         
         ZStack(alignment: .top){
-            song.image
+            currentSong.image
                 .resizable()
                 .blur(radius: 30)
                 .frame(width: 600, height: UIScreen.screenHeight*1.05)
@@ -62,7 +64,7 @@ struct PlayerView: View {
                 Spacer()
                 
                 ZStack {
-                    song.image
+                    currentSong.image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 330, height: 330)
@@ -84,13 +86,13 @@ struct PlayerView: View {
                 Spacer()
                 
                 VStack {
-                    Text(song.title)
+                    Text(currentSong.title)
                         .bold()
-                    Text(song.artistName)
+                    Text(currentSong.artistName)
                     MusicSlider()
                         .frame(width: 326)
                         .padding(.top, 26)
-                    MusicPlayer(song: song)
+                    MusicPlayer(song: currentSong)
                         .padding(.top, 18)
                 }
                  // Push content to the top
@@ -111,9 +113,8 @@ struct PlayerView: View {
 }
 
 #Preview {
-    let songs = ModelData().songs
     return Group
     {
-        PlayerView(song: songs[1])
+        PlayerView()
     }
 }

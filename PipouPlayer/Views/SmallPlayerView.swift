@@ -47,7 +47,7 @@ struct SmallPlayerView: View {
                     .opacity(0.5)
                     .padding(.bottom, UIScreen.screenHeight*0.1)
                     .fullScreenCover(isPresented: $showMusicPlayer) {
-                        PlayerView(song: song)
+                        PlayerView()
                     }
             }.foregroundColor(.primary)
             HStack{

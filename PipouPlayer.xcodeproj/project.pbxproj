@@ -16,6 +16,7 @@
 		FE891A832C3DBD7E00AF6439 /* SmallPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A822C3DBD7E00AF6439 /* SmallPlayerView.swift */; };
 		FE891A852C3DCC9F00AF6439 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE891A842C3DCC9F00AF6439 /* AudioManager.swift */; };
 		FE9B72D02C3F099F006E9111 /* driftingSmokeFile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9B72CF2C3F099F006E9111 /* driftingSmokeFile.mp3 */; };
+		FE9B72D32C3FF947006E9111 /* saveMe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE9B72D22C3FF947006E9111 /* saveMe.mp3 */; };
 		FED693BF2C38186100DE38CF /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693BE2C38186100DE38CF /* SongList.swift */; };
 		FED693C12C3819B000DE38CF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C02C3819B000DE38CF /* PlayerView.swift */; };
 		FED693C32C385D2F00DE38CF /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED693C22C385D2F00DE38CF /* MusicPlayer.swift */; };
@@ -37,6 +38,7 @@
 		FE891A842C3DCC9F00AF6439 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		FE9B72CE2C3F05B8006E9111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FE9B72CF2C3F099F006E9111 /* driftingSmokeFile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = driftingSmokeFile.mp3; sourceTree = "<group>"; };
+		FE9B72D22C3FF947006E9111 /* saveMe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = saveMe.mp3; sourceTree = "<group>"; };
 		FED693BE2C38186100DE38CF /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		FED693C02C3819B000DE38CF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		FED693C22C385D2F00DE38CF /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		FE9B72D12C3F0A3E006E9111 /* MusicFiles */ = {
 			isa = PBXGroup;
 			children = (
+				FE9B72D22C3FF947006E9111 /* saveMe.mp3 */,
 				FE9B72CF2C3F099F006E9111 /* driftingSmokeFile.mp3 */,
 			);
 			path = MusicFiles;
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF468592B2F683600588855 /* Preview Assets.xcassets in Resources */,
+				FE9B72D32C3FF947006E9111 /* saveMe.mp3 in Resources */,
 				FEF468562B2F683600588855 /* Assets.xcassets in Resources */,
 				FE9B72D02C3F099F006E9111 /* driftingSmokeFile.mp3 in Resources */,
 				FE891A7F2C3AC50A00AF6439 /* songData.json in Resources */,
@@ -355,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PipouPlayer/Preview Content\"";
@@ -373,8 +378,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.loicleforestier.PipouPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.loicleforestier.PipouPlayer1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PipouPlayer/Preview Content\"";
@@ -404,8 +411,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.loicleforestier.PipouPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.loicleforestier.PipouPlayer1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

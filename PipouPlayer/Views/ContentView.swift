@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment (ModelData.self) var modelData
+    
     var body: some View {
         ZStack{
             Color(Color(red: 0.97, green: 0.97, blue: 0.97))
                 .ignoresSafeArea()
             SongList()
-        }.preferredColorScheme(.light)
+        }
+        .preferredColorScheme(.light)
+        .onAppear {
+            AudioManager.shared.initializeModelData(modelData: modelData)
+        }
     }
 }
 

@@ -15,7 +15,12 @@ class AudioManager: ObservableObject {
     private var playerItem: AVPlayerItem?
     private var currentPlaybackTime: CMTime?
     
+    var modelData: ModelData?
+    
+    @Published var currentSongIndex: Int = 0
     @Published var isPlaying: Bool = false
+    @Published var isInitialized: Bool = false
+    @Published var waitingList: [Song] = []
     
     private init() {
         setupAudioSession()
@@ -24,14 +29,21 @@ class AudioManager: ObservableObject {
         }
 
     private func setupAudioSession() {
-            do {
-                let audioSession = AVAudioSession.sharedInstance()
-                try audioSession.setCategory(.playback, mode: .default, options: [])
-                try audioSession.setActive(true)
-            } catch {
-                print("Error setting up audio session: \(error.localizedDescription)")
-            }
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setActive(true)
+        } catch {
+            print("Error setting up audio session: \(error.localizedDescription)")
         }
+    }
+    
+    
+    func initializeModelData(modelData: ModelData) {
+        self.modelData = modelData
+        waitingList = modelData.songs
+        isInitialized = true
+    }
     
     private func setupRemoteTransportControls() {
            let commandCenter = MPRemoteCommandCenter.shared()
@@ -45,7 +57,16 @@ class AudioManager: ObservableObject {
                self?.player?.pause()
                return .success
            }
-           
+        
+        commandCenter.nextTrackCommand.addTarget{ [weak self] event in
+            self?.playNextSong()
+            return .success
+        }
+        
+        commandCenter.previousTrackCommand.addTarget{ [weak self] event in
+            self?.playPreviousSong()
+            return .success
+        }
            // Ajoutez d'autres commandes audio ici (par exemple, next, previous, etc.)
     }
     
@@ -73,6 +94,20 @@ class AudioManager: ObservableObject {
         isPlaying = false
         currentPlaybackTime = player?.currentTime()
         print("Audio stopped")
+    }
+    
+    func playNextSong(){
+        guard modelData != nil else { return }
+        guard !waitingList.isEmpty else { return }
+        currentSongIndex = (currentSongIndex+1) % waitingList.count
+        playAudio(fileName: waitingList[currentSongIndex].fileName)
+    }
+    
+    func playPreviousSong(){
+        guard modelData != nil else { return }
+        guard !waitingList.isEmpty else { return }
+        currentSongIndex = (currentSongIndex-1 + waitingList.count) % waitingList.count
+        playAudio(fileName: waitingList[currentSongIndex].fileName)
     }
 }
 
