@@ -1,26 +1,12 @@
 [
     {
-        "title": "Drifting Smoke",
-        "imageName": "driftingSmoke",
-        "artistName": "Kalaido - Lo-fi Music",
         "isFavorite": true,
         "fileName": "driftingSmokeFile",
-        "id": 1
+        "id": "D9BB6CD0-FBB9-49B9-9076-07D49E1707B2"
     },
     {
-        "title": "Save Me",
-        "imageName": "saveMe",
-        "artistName": "Save Me - Lo-fi Music",
         "isFavorite": false,
         "fileName": "saveMe",
-        "id": 2
-    },
-    {
-        "title": "Save Me",
-        "imageName": "test",
-        "artistName": "Save Me - Lo-fi Music",
-        "isFavorite": false,
-        "fileName": "driftingSmokeFile",
-        "id": 3
+        "id": "D9BB6CD0-FBB9-49B9-9076-07D49E1707B1"
     }
 ]

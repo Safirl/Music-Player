@@ -9,11 +9,14 @@ import SwiftUI
 
 struct FavoriteButton: View {
     @Binding var isSet: Bool
+    @Environment(ModelData.self) var modelData // Accès à l'environnement partagé ModelData
+    var song: Song
     var size: CGFloat // Taille du bouton
 
     var body: some View {
         Button(action: {
             isSet.toggle()
+//            modelData.updateFavoriteStatus(for: song, isFavorite: isSet)
         }) {
             ZStack {
                 Circle()
@@ -32,5 +35,11 @@ struct FavoriteButton: View {
 }
 
 #Preview {
-    FavoriteButton(isSet: .constant(true), size: 64)
+    let songs = ModelData().songs
+    @State var isFavorite = ModelData().songs[0].isFavorite
+    return Group
+    {
+        FavoriteButton(isSet: $isFavorite, song: songs[0], size: 64)
+            .environment(ModelData())
+    }
 }

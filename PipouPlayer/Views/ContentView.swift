@@ -1,20 +1,33 @@
-//
-//  ContentView.swift
-//  PipouPlayer
-//
-//  Created by loic leforestier on 17/12/2023.
-//
-
 import SwiftUI
+
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
 
 struct ContentView: View {
     @Environment (ModelData.self) var modelData
+    @StateObject var audioManager = AudioManager.shared
+    
+    var defaultSong: Song {
+        return Song(
+            title: "Default Title",
+            artistName: "Default Artist",
+            fileName: "saveMe",
+            image: UIImage(named: "saveMe") ?? UIImage()
+        )
+    }
     
     var body: some View {
         ZStack{
             Color(Color(red: 0.97, green: 0.97, blue: 0.97))
                 .ignoresSafeArea()
-            SongList()
+            if let currentSong = modelData.songs[safe: audioManager.currentSongIndex] {
+                SongList(currentSong: currentSong)
+            } else {
+                SongList(currentSong: defaultSong)
+            }
         }
         .preferredColorScheme(.light)
         .onAppear {

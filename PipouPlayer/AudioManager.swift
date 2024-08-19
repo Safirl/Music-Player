@@ -14,13 +14,15 @@ class AudioManager: ObservableObject {
     private var player: AVPlayer?
     private var playerItem: AVPlayerItem?
     private var currentPlaybackTime: CMTime?
+    private var currentSongId : UUID?
     
     var modelData: ModelData?
     
     @Published var currentSongIndex: Int = 0
     @Published var isPlaying: Bool = false
     @Published var isInitialized: Bool = false
-    @Published var waitingList: [Song] = []
+    //@Published var waitingList: [Song] = []
+
     
     private init() {
         setupAudioSession()
@@ -40,9 +42,12 @@ class AudioManager: ObservableObject {
     
     
     func initializeModelData(modelData: ModelData) {
-        self.modelData = modelData
-        waitingList = modelData.songs
-        isInitialized = true
+        if !isInitialized {
+            self.modelData = modelData
+            //waitingList = modelData.songs
+            isInitialized = true
+            return
+        }
     }
     
     private func setupRemoteTransportControls() {
@@ -70,10 +75,11 @@ class AudioManager: ObservableObject {
            // Ajoutez d'autres commandes audio ici (par exemple, next, previous, etc.)
     }
     
-    func playAudio(fileName: String) {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "mp3") else {
+    func playAudio(fileName: String) -> Bool {
+        let url = getDocumentsDirectory().appending(component: fileName).appendingPathExtension("m4a")
+        guard doesFileExist(for: url) else {
             print("Audio file not found")
-            return
+            return false
         }
         
         playerItem = AVPlayerItem(url: url)
@@ -87,6 +93,28 @@ class AudioManager: ObservableObject {
         
         player?.play()
         isPlaying = true
+        return true
+    }
+    
+    func playNewAudio(fileName: String) {
+        guard let newSongId = modelData?.songs.first(where: { $0.fileName == fileName })?.id else {
+            print("Audio file Id not found")
+            return
+        }
+        
+        if newSongId == currentSongId {
+            print("The song \(fileName) is already playing.")
+            return
+        }
+        
+        //Play the audio
+        guard playAudio(fileName: fileName) else {
+            return
+        }
+        
+        // Mettre à jour la chanson actuelle
+        currentSongId = newSongId
+        print("Playing new song: \(fileName)")
     }
     
     func stopAudio() {
@@ -98,16 +126,16 @@ class AudioManager: ObservableObject {
     
     func playNextSong(){
         guard modelData != nil else { return }
-        guard !waitingList.isEmpty else { return }
-        currentSongIndex = (currentSongIndex+1) % waitingList.count
-        playAudio(fileName: waitingList[currentSongIndex].fileName)
+        guard !(modelData?.songs.isEmpty)! else { return }
+        currentSongIndex = (currentSongIndex+1) % (modelData?.songs.count)!
+        playNewAudio(fileName: (modelData?.songs[currentSongIndex].fileName)!)
     }
     
     func playPreviousSong(){
         guard modelData != nil else { return }
-        guard !waitingList.isEmpty else { return }
-        currentSongIndex = (currentSongIndex-1 + waitingList.count) % waitingList.count
-        playAudio(fileName: waitingList[currentSongIndex].fileName)
+        guard !(modelData?.songs.isEmpty)! else { return }
+        currentSongIndex = (currentSongIndex-1 + (modelData?.songs.count)!) % (modelData?.songs.count)!
+        playNewAudio(fileName: (modelData?.songs[currentSongIndex].fileName)!)
     }
 }
 

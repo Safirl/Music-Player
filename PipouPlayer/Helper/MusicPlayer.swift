@@ -16,7 +16,7 @@ struct MusicPlayer: View {
             Button(action: {
                 // Action pour le bouton "previous"
                 print("Previous button tapped")
-                AudioManager.shared.playPreviousSong()
+                audioManager.playPreviousSong()
             }) {
                 Image("previousIcon")
                     .resizable()
@@ -38,7 +38,7 @@ struct MusicPlayer: View {
             Button(action: {
                 // Action pour le bouton "next"
                 print("Next button tapped")
-                AudioManager.shared.playNextSong()
+                audioManager.playNextSong()
             }) {
                 Image("nextIcon")
                     .resizable()

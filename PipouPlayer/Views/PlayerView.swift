@@ -15,16 +15,9 @@ extension UIScreen{
 
 struct PlayerView: View {
     @State private var isFavorite: Bool = true
+    var currentSong: Song
     @Environment(\.presentationMode) var presentationMode
     @StateObject var audioManager = AudioManager.shared
-    
-    var currentSong: Song {
-            return audioManager.waitingList[audioManager.currentSongIndex]
-        }
-    
-//    init(song: Song) {
-//        self._isFavorite = State(initialValue: song.isFavorite)
-//    }
     
     var dragToDismissGesture: some Gesture {
         DragGesture()
@@ -36,7 +29,6 @@ struct PlayerView: View {
     }
     
     var body: some View {
-        
         ZStack(alignment: .top){
             currentSong.image
                 .resizable()
@@ -73,14 +65,14 @@ struct PlayerView: View {
                     
                     HStack {
                         Spacer()
-                        VStack {
-                            Spacer()
-                            FavoriteButton(isSet: $isFavorite, size:42)
-                                .padding(.bottom, 26)
-                                .padding(.trailing, 16)
-                        }
+//                        VStack {
+//                            Spacer()
+//                            FavoriteButton(isSet: $isFavorite, size:42)
+//                                .padding(.bottom, 26)
+//                                .padding(.trailing, 16)
+//                        }
                     }
-                        .padding(.horizontal, 10.0)
+                    .padding(.horizontal, 10.0)
                 }.scaledToFit()
                 
                 Spacer()
@@ -95,12 +87,12 @@ struct PlayerView: View {
                     MusicPlayer(song: currentSong)
                         .padding(.top, 18)
                 }
-                 // Push content to the top
+                // Push content to the top
                 Spacer()
                 
                 HStack {
                     Spacer()
-                     // Push image to the right
+                    // Push image to the right
                     Image("waitlistIcon")
                         .frame(width: 38, height: 38)
                         .padding([.trailing, .bottom], 20) // Add padding to position the image
@@ -108,13 +100,14 @@ struct PlayerView: View {
             }
             .padding(.horizontal)
             .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight) // Ensure VStack takes full width and height
-        }.gesture(dragToDismissGesture)
+        }
+        .gesture(dragToDismissGesture)
     }
 }
 
 #Preview {
-    return Group
-    {
-        PlayerView()
+    let songs = ModelData().songs
+    return Group {
+        PlayerView(currentSong: songs[0])
     }
 }

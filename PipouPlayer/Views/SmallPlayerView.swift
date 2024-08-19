@@ -47,7 +47,7 @@ struct SmallPlayerView: View {
                     .opacity(0.5)
                     .padding(.bottom, UIScreen.screenHeight*0.1)
                     .fullScreenCover(isPresented: $showMusicPlayer) {
-                        PlayerView()
+                        PlayerView(currentSong: song)
                     }
             }.foregroundColor(.primary)
             HStack{
@@ -75,6 +75,7 @@ struct SmallPlayerView: View {
                 Button(action: {
                     // Action pour le bouton "next"
                     print("Next button tapped")
+                    audioManager.playNextSong()
                 }) {
                     Image("nextIcon")
                         .resizable()
