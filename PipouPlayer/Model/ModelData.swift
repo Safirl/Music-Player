@@ -44,7 +44,7 @@ func loadInitialSongs() async throws -> [Song] {
     let filename = "songData.json"
     
     //To delete documents json if the data model has been changed !! Only for Test, do not use on shipping.
-//    deleteFile(named: "driftingSmoke.mp3")
+//    deleteFile(named: "songData.json")
 //    deleteFile(named: "Updated_driftingSmoke.m4a")
     let fileURL = getDocumentsDirectory().appendingPathComponent(filename)
     

@@ -81,7 +81,7 @@ struct PlayerView: View {
                     Text(currentSong.title)
                         .bold()
                     Text(currentSong.artistName)
-                    MusicSlider()
+                    MusicSlider(audioManager: AudioManager.shared)
                         .frame(width: 326)
                         .padding(.top, 26)
                     MusicPlayer(song: currentSong)
