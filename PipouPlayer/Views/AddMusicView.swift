@@ -20,7 +20,6 @@ struct AddMusicView: View {
     @State private var artistName: String = ""
     @State private var songTitle: String = ""
     @State private var importedCoverName: String? = nil
-//    @State private var coverImage: UIImage?
     @Binding var showAddMusicView: Bool
     @Environment(ModelData.self) var modelData
     

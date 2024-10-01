@@ -45,10 +45,6 @@ func loadInitialSongs() async throws -> [Song] {
     
     //To delete documents json if the data model has been changed !! Only for Test, do not use on shipping.
 //    deleteFile(named: "Barbie World with Aqua.mp3")
-//    deleteFile(named: "Barbie World with Aqua.m4a")
-//    deleteFile(named: "Agora Hills.mp3")
-//    deleteFile(named: "Boys a liar Pt. 2 by PinkPantheress.m4a")
-//    deleteFile(named: "Updated_driftingSmoke.m4a")
     let fileURL = getDocumentsDirectory().appendingPathComponent(filename)
     
     return try await load(filename, fromBundle: !doesFileExist(for: fileURL))
@@ -177,10 +173,9 @@ func deleteFile(named fileName: String) {
         // Construire le chemin complet du fichier
         let fileURL = documentsDirectory.appendingPathComponent(fileName)
         
-        // Vérifier si le fichier existe
+        // If files exist we removed it.
         if fileManager.fileExists(atPath: fileURL.path) {
             do {
-                // Tenter de supprimer le fichier
                 try fileManager.removeItem(at: fileURL)
                 print("File \(fileName) successfully deleted.")
             } catch {
@@ -238,7 +233,6 @@ func extractMetadata(from url: URL, completion: @escaping (String?, String?, UII
                 }
             }
             
-            // Appel du completion handler avec les résultats et sans erreur
             completion(title, artist, artwork, artworkName, nil)
         } else {
             // Si le fichier n'est pas accessible et startAccessingSecurityScopedResource a échoué
@@ -270,7 +264,7 @@ func writeMetadata(in fileUrl: URL, title: String, artist: String, artwork: UIIm
         return false
     }
     
-    // Crée un nouveau fichier dans le même dossier avec un préfixe "Updated_"
+    //Replace file extension with m4a to support apple filetype
     let outputFileUrl = fileUrl.deletingPathExtension().appendingPathExtension("m4a")
     
     print("Output file URL: \(outputFileUrl)")

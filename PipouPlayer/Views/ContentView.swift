@@ -7,7 +7,7 @@ extension Collection {
 }
 
 struct ContentView: View {
-    @Environment (ModelData.self) var modelData
+    @Environment(ModelData.self) var modelData
     @StateObject var audioManager = AudioManager.shared
     
     var defaultSong: Song {

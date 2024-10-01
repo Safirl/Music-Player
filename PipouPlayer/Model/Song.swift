@@ -15,7 +15,6 @@ struct Song : Hashable, Identifiable {
     var isFavorite : Bool
     var fileName: String
     
-    //private var imageName: String
     var uiImage: UIImage?
     var image: Image {
         if let uiImage = self.uiImage {

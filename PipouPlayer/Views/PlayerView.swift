@@ -95,7 +95,7 @@ struct PlayerView: View {
                     // Push image to the right
                     Image("waitlistIcon")
                         .frame(width: 38, height: 38)
-                        .padding([.trailing, .bottom], 20) // Add padding to position the image
+                        .padding([.trailing, .bottom], 20)
                 }
             }
             .padding(.horizontal)

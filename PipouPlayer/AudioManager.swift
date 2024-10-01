@@ -35,7 +35,6 @@ class AudioManager: ObservableObject {
         setupAudioSession()
         setupRemoteTransportControls()
         setupPlayerEndObserver()
-            // Initialisation de l'AudioManager
         }
 
     private func setupAudioSession() {
@@ -58,6 +57,7 @@ class AudioManager: ObservableObject {
         }
     }
     
+    // Audio commands of the command center
     private func setupRemoteTransportControls() {
            let commandCenter = MPRemoteCommandCenter.shared()
            
@@ -92,7 +92,7 @@ class AudioManager: ObservableObject {
             player.seek(to: newTime)
             return .success
         }
-           // Ajoutez d'autres commandes audio ici (par exemple, next, previous, etc.)
+        //Add more commands here
     }
     
     func playAudio(fileName: String) -> Bool {
@@ -111,10 +111,10 @@ class AudioManager: ObservableObject {
         addTimeObserver()
         setupPlayerEndObserver()
         
-        // Restaurer la position de lecture actuelle s'il y en a une
+        // Restore playback position
         if let currentPlaybackTime = currentPlaybackTime {
             player?.seek(to: currentPlaybackTime)
-            self.currentPlaybackTime = nil // Réinitialiser la position après utilisation
+            self.currentPlaybackTime = nil //Then restore it
         }
         
         player?.play()
@@ -138,7 +138,7 @@ class AudioManager: ObservableObject {
         let currentTime = CMTimeGetSeconds(player.currentTime())
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = currentTime
         
-        // Ajouter l'image de couverture si disponible
+        // Add artwork image if there is one
         if let artworkImage = song.uiImage, let artworkData = artworkImage.pngData() {
             let artwork = MPMediaItemArtwork(boundsSize: artworkImage.size) { _ in
                 return UIImage(data: artworkData) ?? artworkImage
@@ -147,7 +147,7 @@ class AudioManager: ObservableObject {
         }
         
         do {
-        // Ajouter la durée totale et la position actuelle du morceau
+        // add song lenght
             if let duration = try await playerItem?.asset.load(.duration) {
                 let durationInSeconds = CMTimeGetSeconds(duration)
                 nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = durationInSeconds
@@ -227,7 +227,6 @@ class AudioManager: ObservableObject {
         }
         
         // Mettre à jour la chanson actuelle
-//        currentSongId = newSongId
         currentSongIndex = newIndex
         print("Playing new song: \(fileName)")
     }

@@ -15,7 +15,7 @@ extension View {
 
 struct SongList: View {
     
-    @Environment (ModelData.self) var modelData
+    @Environment(ModelData.self) var modelData
     @State private var showFavorites : Bool = true
     @StateObject var audioManager = AudioManager.shared
     @State private var showAddMusicView = false
