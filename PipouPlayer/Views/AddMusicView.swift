@@ -24,6 +24,8 @@ struct AddMusicView: View {
     @Binding var showAddMusicView: Bool
     @Environment(ModelData.self) var modelData
     
+    @State private var isImportingSong: Bool = false
+    
     var body: some View {
         ZStack {
             Color.clear
@@ -39,12 +41,15 @@ struct AddMusicView: View {
                             Text(importedFileName ?? "Import file")
                                 .lineLimit(1)
                                 .truncationMode(.middle)
+                                .foregroundColor(isImportingSong ? .gray : .blue)
                             Image("addFileIcon")
                                 .resizable()
                                 .frame(width: 32, height: 32)
+                                .foregroundColor(isImportingSong ? .gray : .blue)
                                 
                         }
                     }
+                    .disabled(isImportingSong)
                     .fileImporter(
                         isPresented: $showFileImporterMusic,
                         allowedContentTypes: [UTType.audio],
@@ -81,11 +86,13 @@ struct AddMusicView: View {
                 HStack{
                     Text("Artist name:")
                     TextField("Enter artist name", text: $artistName)
+                        .disabled(isImportingSong)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack{
                     Text("Song title:")
                     TextField("Enter song title", text: $songTitle)
+                        .disabled(isImportingSong)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 HStack{
@@ -97,12 +104,15 @@ struct AddMusicView: View {
                             Text(importedCoverName ?? "Import cover image")
                                 .lineLimit(1)
                                 .truncationMode(.middle)
+                                .foregroundColor(isImportingSong ? .gray : .blue)
                             Image("addCoverIcon")
                                 .resizable()
                                 .frame(width: 21, height: 21)
+                                .foregroundColor(isImportingSong ? .gray : .blue)
                                 
                         }
                     }
+                    .disabled(isImportingSong)
                     .fileImporter(
                         isPresented: $showFileImporterCover,
                         allowedContentTypes: [UTType.image],
@@ -130,15 +140,22 @@ struct AddMusicView: View {
                         resetFields()
                     }){
                         Text("Cancel")
+                            .foregroundColor(isImportingSong ? .gray : .blue)
                     }
+                    .disabled(isImportingSong)
+                    
                     Spacer()
                     Button(action: {
                         Task {
+                            isImportingSong = true
                             await importSong()
+                            isImportingSong = false
                         }
                     }){
-                        Text("Import song")
+                        Text(isImportingSong ? "Importing..." : "Import song")
+                            .foregroundColor(isImportingSong ? .gray : .blue)
                     }
+                    .disabled(isImportingSong)
                 }
             }
             .padding(18)

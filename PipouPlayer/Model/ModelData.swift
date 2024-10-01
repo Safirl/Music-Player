@@ -44,7 +44,10 @@ func loadInitialSongs() async throws -> [Song] {
     let filename = "songData.json"
     
     //To delete documents json if the data model has been changed !! Only for Test, do not use on shipping.
-//    deleteFile(named: "songData.json")
+//    deleteFile(named: "Barbie World with Aqua.mp3")
+//    deleteFile(named: "Barbie World with Aqua.m4a")
+//    deleteFile(named: "Agora Hills.mp3")
+//    deleteFile(named: "Boys a liar Pt. 2 by PinkPantheress.m4a")
 //    deleteFile(named: "Updated_driftingSmoke.m4a")
     let fileURL = getDocumentsDirectory().appendingPathComponent(filename)
     
@@ -194,6 +197,7 @@ func extractMetadata(from url: URL, completion: @escaping (String?, String?, UII
         let isInDocumentsDirectory = doesFileExist(for: getDocumentsDirectory().appendingPathComponent(url.lastPathComponent))
         
         if isInDocumentsDirectory || url.startAccessingSecurityScopedResource() {
+            
             defer {
                 if !isInDocumentsDirectory {
                     url.stopAccessingSecurityScopedResource()
