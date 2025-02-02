@@ -45,7 +45,7 @@
 		FED693C02C3819B000DE38CF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		FED693C22C385D2F00DE38CF /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		FED693C42C38601000DE38CF /* MusicSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSlider.swift; sourceTree = "<group>"; };
-		FEF4684E2B2F683500588855 /* PipouPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipouPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEF4684E2B2F683500588855 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF468512B2F683500588855 /* PipouPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipouPlayerApp.swift; sourceTree = "<group>"; };
 		FEF468532B2F683500588855 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FEF468552B2F683600588855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		FEF468452B2F683500588855 = {
 			isa = PBXGroup;
 			children = (
-				FEF468502B2F683500588855 /* PipouPlayer */,
+				FEF468502B2F683500588855 /* MusicPlayer */,
 				FEF4684F2B2F683500588855 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,12 +116,12 @@
 		FEF4684F2B2F683500588855 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEF4684E2B2F683500588855 /* PipouPlayer.app */,
+				FEF4684E2B2F683500588855 /* MusicPlayer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEF468502B2F683500588855 /* PipouPlayer */ = {
+		FEF468502B2F683500588855 /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				FE9B72CE2C3F05B8006E9111 /* Info.plist */,
@@ -133,7 +133,7 @@
 				FEF468552B2F683600588855 /* Assets.xcassets */,
 				FEF468572B2F683600588855 /* Preview Content */,
 			);
-			path = PipouPlayer;
+			path = MusicPlayer;
 			sourceTree = "<group>";
 		};
 		FEF468572B2F683600588855 /* Preview Content */ = {
@@ -149,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEF4684D2B2F683500588855 /* PipouPlayer */ = {
+		FEF4684D2B2F683500588855 /* MusicPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEF4685C2B2F683600588855 /* Build configuration list for PBXNativeTarget "PipouPlayer" */;
+			buildConfigurationList = FEF4685C2B2F683600588855 /* Build configuration list for PBXNativeTarget "MusicPlayer" */;
 			buildPhases = (
 				FEF4684A2B2F683500588855 /* Sources */,
 				FEF4684B2B2F683500588855 /* Frameworks */,
@@ -161,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = PipouPlayer;
+			name = MusicPlayer;
 			productName = PipouPlayer;
-			productReference = FEF4684E2B2F683500588855 /* PipouPlayer.app */;
+			productReference = FEF4684E2B2F683500588855 /* MusicPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -181,7 +181,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FEF468492B2F683500588855 /* Build configuration list for PBXProject "PipouPlayer" */;
+			buildConfigurationList = FEF468492B2F683500588855 /* Build configuration list for PBXProject "MusicPlayer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -194,7 +194,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEF4684D2B2F683500588855 /* PipouPlayer */,
+				FEF4684D2B2F683500588855 /* MusicPlayer */,
 			);
 		};
 /* End PBXProject section */
@@ -296,6 +296,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
+				PRODUCT_NAME = MusicPlayer;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -352,6 +354,8 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
+				PRODUCT_NAME = MusicPlayer;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -366,11 +370,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PipouPlayer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"${PRODUCT_NAME}/Preview Content\"";
 				DEVELOPMENT_TEAM = A8Y934D4ZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PipouPlayer/Info.plist;
+				INFOPLIST_FILE = "${PRODUCT_NAME}/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.loicleforestier.PipouPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loicleforestier.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -399,11 +403,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PipouPlayer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"${PRODUCT_NAME}/Preview Content\"";
 				DEVELOPMENT_TEAM = A8Y934D4ZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PipouPlayer/Info.plist;
+				INFOPLIST_FILE = "${PRODUCT_NAME}/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -415,7 +419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.loicleforestier.PipouPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loicleforestier.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -427,7 +431,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEF468492B2F683500588855 /* Build configuration list for PBXProject "PipouPlayer" */ = {
+		FEF468492B2F683500588855 /* Build configuration list for PBXProject "MusicPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEF4685A2B2F683600588855 /* Debug */,
@@ -436,7 +440,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEF4685C2B2F683600588855 /* Build configuration list for PBXNativeTarget "PipouPlayer" */ = {
+		FEF4685C2B2F683600588855 /* Build configuration list for PBXNativeTarget "MusicPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEF4685D2B2F683600588855 /* Debug */,
