@@ -10,3 +10,6 @@ DerivedData/
 xcuserdata/Pods/
 *.xcworkspace
 xcuserdata/
+Pods/
+*.xcworkspace
+xcuserdata/
