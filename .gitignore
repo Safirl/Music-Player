@@ -1,3 +1,10 @@
-PipouPlayer.xcodeproj/project.xcworkspace/xcuserdata/loicleforestier.xcuserdatad/IDEFindNavigatorScopes.plist
+MusicPlayer.xcodeproj/project.xcworkspace/xcuserdata/loicleforestier.xcuserdatad/IDEFindNavigatorScopes.plist
 .DS_Store
 *.xcodeproj/
+
+# Ignore le dossier Pods (chaque dev doit faire pod install)
+Pods/
+
+# Fichiers générés automatiquement
+DerivedData/
+xcuserdata/
