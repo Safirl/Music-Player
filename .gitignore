@@ -7,4 +7,6 @@ Pods/
 
 # Fichiers générés automatiquement
 DerivedData/
+xcuserdata/Pods/
+*.xcworkspace
 xcuserdata/
